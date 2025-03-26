@@ -1,0 +1,32 @@
+body {
+    background-color: #f5f5e9; /* Beige background */
+    font-family: Arial, sans-serif;
+}
+.custom-form {
+    background-color: #8fbc8f; /* Caky green */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-label {
+    color: #5c4033; /* Brown text */
+    font-weight: bold;
+}
+.form-select {
+    background-color: #fff8e7; /* Light beige */
+    border: 2px solid #5c4033; /* Brown border */
+    color: #5c4033;
+}
+.form-select:focus {
+    border-color: #8fbc8f;
+    box-shadow: 0 0 0 0.2rem rgba(143, 188, 143, 0.25);
+}
+.btn-custom {
+    background-color: #5c4033; /* Brown button */
+    border-color: #5c4033;
+    color: #f5f5e9; /* Beige text */
+}
+.btn-custom:hover {
+    background-color: #4a3529; /* Darker brown on hover */
+    border-color: #4a3529;
+}
