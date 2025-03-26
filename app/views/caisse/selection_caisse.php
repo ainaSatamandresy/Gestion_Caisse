@@ -8,13 +8,15 @@
 </head>
 
 <body>
-    <form action="">
+    <form action="treatment/selection_caisse" method="post">
+        
         <select name="caisse" id="">
             <option value="">caisse 1</option>
             <option value="">caisse 2</option>
         </select>
         <input type="submit" value="valider">
     </form>
+
 </body>
 
 </html>
