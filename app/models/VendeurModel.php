@@ -30,7 +30,6 @@ class VendeurModel
         $this->nomVendeur = $nomVendeur;
     }
 
-
     public function getNomVendeur(){
         return $this->nomVendeur;
     }
