@@ -73,7 +73,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form action="" class="custom-form">
+    <form action="/caisse/treatment/selection_caisse" class="custom-form" method="post">
         <div class="form-label">Veuillez choisir une caisse pour continuer</div>
         <center>
         <div class="radio-group">
