@@ -1,5 +1,6 @@
 <?php
 
+use app\controllers\AchatController;
 use app\controllers\UsersController;
 use app\controllers\AdminController;
 use app\controllers\CaisseController;
@@ -29,13 +30,24 @@ use flight\net\Router;
 // define('BASE_URL', $protocol . '://' . $host .$projectPath);
 // http://localhost/c/public/traitement-login
 
-$router->get('/', function(){
+$router->get('/', function () {
 	Flight::redirect('/caisse/selection_caisse');
-}); 	
+});
 
 
-$router->group('/caisse',function () use ($router,$app){
+$router->group('/caisse', function () use ($router, $app) {
 	$caisseController = new CaisseController();
-	$router->get('/home',[$caisseController,'home']);	
-	$router->get('/selection_caisse',[$caisseController,'selection_caisse_form']);
+	$router->get('/home', [$caisseController, 'home']);
+	$router->get('/selection_caisse', [$caisseController, 'selection_caisse_form']);
+	$router->group('/treatment', function () use ($router, $caisseController) {
+		$router->post('/selection_caisse', [$caisseController, 'selection_caisse']);
+	});
+});
+
+$router->group('/achat', function () use ($router, $app) {
+	$achatController = new AchatController();
+	$router->get('/saisie_achat_form', [$achatController, 'saisie_achat_form']);
+	$router->group('/treatment', function () use ($router, $achatController) {
+		$router->post('/saisie_achat', [$achatController, 'saisie_achat']);
+	});
 });
