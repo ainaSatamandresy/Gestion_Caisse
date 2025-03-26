@@ -15,6 +15,11 @@ class VendeurController
     }
 
     public function login(){
+        $data = Flight::request()->data;
+        if($data!=null){
+            $nom = $data['nom'];
+        }
+
         Flight::redirect('/caisse/selection_caisse');
     }
 }
