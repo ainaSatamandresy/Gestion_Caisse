@@ -27,7 +27,6 @@
         </form>
     </div>
 
-    <!-- Bootstrap JS (optional, if you need interactive components) -->
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
