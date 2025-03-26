@@ -1,6 +1,6 @@
 body {
-    background: linear-gradient(135deg, #f5f5e9 0%, #d9d2b6 100%); /* Beige gradient */
-    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    background: #f5f5e9; /* Solid beige */
+    font-family: 'Roboto', sans-serif;
     height: 100vh;
     margin: 0;
     display: flex;
@@ -9,80 +9,53 @@ body {
     overflow: hidden;
 }
 .custom-form {
-    background: rgba(143, 188, 143, 0.9); /* Khaki green with transparency */
+    background: #ffffff; /* White background */
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(92, 64, 51, 0.3); /* Brown shadow */
-    border: 1px solid #5c4033; /* Brown border */
-    position: relative;
-    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 10px solid #8fbc8f; /* Thicker khaki green line (~1cm) */
+    width: 400px; /* Slightly wider form */
 }
 .form-label {
-    color: #5c4033; /* Brown */
-    font-size: 1.5rem; /* Larger font */
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #5c4033; /* Brown text */
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.custom-select-wrapper {
-    position: relative;
-    width: 300px;
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between radio options */
 }
-.custom-select {
-    background: #fff8e7; /* Light beige */
-    border: 2px solid #5c4033; /* Brown border */
-    color: #5c4033;
-    font-size: 1.25rem; /* Larger font */
-    padding: 15px;
-    border-radius: 8px;
-    width: 100%;
+.form-check-input {
+    accent-color: #8fbc8f; /* Khaki green for radio buttons */
+    transform: scale(1.5); /* Larger radio buttons */
+    margin-right: 10px;
+}
+.form-check-label {
+    color: #5c4033; /* Brown text */
+    font-size: 1.25rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
-.custom-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #fff8e7;
-    border: 2px solid #5c4033;
-    border-radius: 8px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    z-index: 10;
-}
-.custom-options.show {
-    max-height: 200px; /* Adjust based on content */
-}
-.custom-option {
-    padding: 10px 15px;
-    color: #5c4033;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-.custom-option:hover {
-    background: #8fbc8f; /* Khaki green hover */
+.form-check-input:checked + .form-check-label {
+    color: #8fbc8f; /* Khaki green when selected */
+    font-weight: 500;
 }
 .btn-custom {
-    background: #5c4033; /* Brown */
-    color: #f5f5e9; /* Beige text */
+    background: #ffffff; /* White button */
+    color: #5c4033; /* Brown text */
     font-size: 1.25rem;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 25px;
+    border: 2px solid #d9d2b6; /* Beige border */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 25px;
 }
 .btn-custom:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(92, 64, 51, 0.4);
-}
-/* Futuristic animation */
-@keyframes glow {
-    0% { box-shadow: 0 0 5px #8fbc8f; }
-    50% { box-shadow: 0 0 20px #8fbc8f; }
-    100% { box-shadow: 0 0 5px #8fbc8f; }
-}
-.custom-form:hover {
-    animation: glow 2s infinite;
+    background: #d9d2b6; /* Beige on hover */
+    color: #5c4033;
+    box-shadow: 0 3px 10px rgba(92, 64, 51, 0.2);
 }

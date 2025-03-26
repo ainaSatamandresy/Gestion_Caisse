@@ -27,6 +27,13 @@ class ProduitModel
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getById($id) {
+        $query = "SELECT * FROM Produit WHERE id_Produit = :id";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch();
+    }
+
     public function setDesignation($designation){
         $this->Designation = $designation;
     }
