@@ -90,7 +90,7 @@
         <button type="submit" class="btn btn-custom">Valider</button>
     </form>
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS (optional, if you need interactive components) -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +13,9 @@
         <div>
             <label for="produit">Produit : </label>
             <select name="produit" id="produit">
-                <option value="">produit 1</option>
-                <option value="">produit 2</option>
+                <?php foreach($listeProduit as $produit) {?>
+                    <option value="<?= $produit['id_Produit'] ?>"><?= $produit['Nom_Produit'] ?></option>
+                <?php }?>
             </select>
         </div>
         <div>

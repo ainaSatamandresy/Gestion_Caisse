@@ -3,7 +3,7 @@
 
 namespace app\controllers;
 
-
+use app\models\ProduitModel;
 use Flight;
 
 class AchatController
@@ -11,7 +11,9 @@ class AchatController
     public function __construct() {}
 
     public function saisie_achat_form(){
-        Flight::render('achat/saisie_achat_form');
+        $listeProduit = (new ProduitModel(Flight::db()))->getAll();
+        $data = ['listeProduit'=>$listeProduit];
+        Flight::render('achat/saisie_achat_form',$data);
     }
 
     public function saisie_achat(){

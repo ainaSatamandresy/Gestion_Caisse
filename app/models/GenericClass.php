@@ -1,14 +1,13 @@
 <?php
 namespace app\models;
 
-require_once 'app/models/BaseObject.php';
+// require_once 'app/models/BaseObject.php';
 use app\models\BaseObject;
 use app\connection\UtilDb;
 use PDO;
 use PDOException;
 use ReflectionClass;
 use ReflectionProperty;
-
 
 class GenericClass extends BaseObject {
 
