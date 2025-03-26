@@ -30,8 +30,12 @@ use flight\net\Router;
 // http://localhost/c/public/traitement-login
 
 $router->get('/', function(){
-	Flight::redirect('/home');
+	Flight::redirect('/caisse/selection_caisse');
 }); 	
 
-$caisseController = new CaisseController();
-$router->get('/home',[$caisseController,'home']);
+
+$router->group('/caisse',function () use ($router,$app){
+	$caisseController = new CaisseController();
+	$router->get('/home',[$caisseController,'home']);	
+	$router->get('/selection_caisse',[$caisseController,'selection_caisse_form']);
+});
