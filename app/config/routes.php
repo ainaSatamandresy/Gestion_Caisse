@@ -10,6 +10,7 @@ use app\controllers\ParcelleController;
 use app\controllers\VarieteController;
 use app\controllers\CueilletteController;
 use app\controllers\UtilisateurController;
+use app\controllers\VendeurController;
 use flight\Engine;
 use flight\net\Router;
 //use Flight;
@@ -31,7 +32,7 @@ use flight\net\Router;
 // http://localhost/c/public/traitement-login
 
 $router->get('/', function () {
-	Flight::redirect('/caisse/selection_caisse');
+	Flight::redirect('/vendeur/login');
 });
 
 
@@ -41,6 +42,14 @@ $router->group('/caisse', function () use ($router, $app) {
 	$router->get('/selection_caisse', [$caisseController, 'selection_caisse_form']);
 	$router->group('/treatment', function () use ($router, $caisseController) {
 		$router->post('/selection_caisse', [$caisseController, 'selection_caisse']);
+	});
+});
+
+$router->group('/vendeur', function () use ($router, $app) {
+	$vendeurControlleur = new VendeurController();
+	$router->get('/login', [$vendeurControlleur, 'login_form']);
+	$router->group('/treatment', function () use ($router, $vendeurControlleur) {
+		$router->post('/login', [$vendeurControlleur, 'login']);
 	});
 });
 
