@@ -1,32 +1,88 @@
 body {
-    background-color: #f5f5e9; /* Beige background */
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f5e9 0%, #d9d2b6 100%); /* Beige gradient */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 .custom-form {
-    background-color: #8fbc8f; /* Caky green */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(143, 188, 143, 0.9); /* Khaki green with transparency */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(92, 64, 51, 0.3); /* Brown shadow */
+    border: 1px solid #5c4033; /* Brown border */
+    position: relative;
+    overflow: hidden;
 }
 .form-label {
-    color: #5c4033; /* Brown text */
-    font-weight: bold;
+    color: #5c4033; /* Brown */
+    font-size: 1.5rem; /* Larger font */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.form-select {
-    background-color: #fff8e7; /* Light beige */
+.custom-select-wrapper {
+    position: relative;
+    width: 300px;
+}
+.custom-select {
+    background: #fff8e7; /* Light beige */
     border: 2px solid #5c4033; /* Brown border */
     color: #5c4033;
+    font-size: 1.25rem; /* Larger font */
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
-.form-select:focus {
-    border-color: #8fbc8f;
-    box-shadow: 0 0 0 0.2rem rgba(143, 188, 143, 0.25);
+.custom-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff8e7;
+    border: 2px solid #5c4033;
+    border-radius: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 10;
+}
+.custom-options.show {
+    max-height: 200px; /* Adjust based on content */
+}
+.custom-option {
+    padding: 10px 15px;
+    color: #5c4033;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.custom-option:hover {
+    background: #8fbc8f; /* Khaki green hover */
 }
 .btn-custom {
-    background-color: #5c4033; /* Brown button */
-    border-color: #5c4033;
+    background: #5c4033; /* Brown */
     color: #f5f5e9; /* Beige text */
+    font-size: 1.25rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-custom:hover {
-    background-color: #4a3529; /* Darker brown on hover */
-    border-color: #4a3529;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(92, 64, 51, 0.4);
+}
+/* Futuristic animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #8fbc8f; }
+    50% { box-shadow: 0 0 20px #8fbc8f; }
+    100% { box-shadow: 0 0 5px #8fbc8f; }
+}
+.custom-form:hover {
+    animation: glow 2s infinite;
 }
